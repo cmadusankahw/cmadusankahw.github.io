@@ -1,2 +1,2 @@
-# cv-web-fronend
-My personal CV with HTML CSS JS &amp; Boostrap
+# cmadusankahw-github-io
+My personal Online Resume with HTML CSS JS &amp; Boostrap
