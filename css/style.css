@@ -44,7 +44,7 @@ h2 {
 }
 
 a {
-    color: #040fa5;
+    color: #0047AB;
 }
 
 a:hover,
@@ -68,7 +68,7 @@ a:active {
   }
 
   .list-social-icons a:hover {
-      color: #040fa5;
+      color: #0047AB;
   }
 
   .list-social-icons a .fa-lg {
@@ -80,7 +80,7 @@ a:active {
   }
 
   .list-icons .list-inline-item i:hover {
-      color: #040fa5;
+      color: #0047AB;
   }
 
 /*==================================================
@@ -147,26 +147,26 @@ a:active {
 }
 
 .btn-white {
-    border-color: #040fa5;
-    background-color: #040fa5;
+    border-color: #0047AB;
+    background-color: #0047AB;
     color: #fff;
 }
 
 .btn-white:hover,
 .btn-white:focus {
     background-color: transparent;
-    color: #040fa5;
+    color: #0047AB;
     cursor: pointer;
 }
 
 .btn-green {
-    border-color: #040fa5;
-    color: #040fa5;
+    border-color: #0047AB;
+    color: #0047AB;
 }
 
 .btn-green:hover,
 .btn-green:focus {
-    background-color: #040fa5;
+    background-color: #0047AB;
     color: #fff;
     cursor: pointer;
 }
@@ -177,7 +177,7 @@ a:active {
   .heading-border {
       width: 60px;
       height: 10px;
-      background-color: #040fa5;
+      background-color: #0047AB;
       margin: 0 auto 20px auto;
   }
 
@@ -208,11 +208,11 @@ a:active {
   }
 
   .bg-primary {
-      background-color: #040fa5 !important;
+      background-color: #0047AB !important;
   }
 
   .text-primary {
-      color: #040fa5 !important;
+      color: #0047AB !important;
   }
 
 /*==================================================
@@ -445,7 +445,7 @@ a:active {
 }
 
 .skill-item i {
-    color: #040fa5;
+    color: #0047AB;
 }
 
 .skill-item h2 {
@@ -552,7 +552,7 @@ a:active {
     height: 15px;
     background: #fff;
     border:2px solid;
-    border-color: #040fa5;
+    border-color: #0047AB;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -578,7 +578,7 @@ a:active {
 
 #award-box .award:hover .award-content {
     border:2px solid;
-    border-color: #040fa5;
+    border-color: #0047AB;
 }
 
 #award-box .award-content:before {
@@ -588,7 +588,7 @@ a:active {
     height: 14px;
     background: #fff;
     border:2px solid;
-    border-color: #040fa5;
+    border-color: #0047AB;
     position: absolute;
     top: 21px;
     right: -7.3px;
@@ -753,7 +753,7 @@ a:active {
 }
 
 .contact-box-desc h3 i{
-  color: #040fa5;
+  color: #0047AB;
 }
 
 .social-icon-f li{
@@ -764,7 +764,7 @@ a:active {
   height: 35px;
   width:35px;
   line-height: 35px;
-  border:2px solid #040fa5;
+  border:2px solid #0047AB;
   text-align: center;
   margin-right: 10px;
   border-radius: 50%;
