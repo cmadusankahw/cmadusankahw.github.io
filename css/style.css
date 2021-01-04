@@ -852,9 +852,3 @@ section.resume-section .resume-item .resume-date {
   border: 1px solid #d3d3d3;
   box-shadow: 0 6px 6px rgb(240, 239, 239);
 }
-
-.my-auto {
-  text-align: center;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
