@@ -8,12 +8,17 @@
     />
 
     <link rel="shortcut icon" href="img/favicon.ico" />
-    <title>Online Resume - Chiran Hewawitharana</title>
+    <title>Portfolio - Chiran Hewawitharana</title>
 
     <!-- Global stylesheets -->
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -58,18 +63,18 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav" style="letter-spacing: 2px">
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#qualifications"
-              >Qualifications</a
+            <a class="nav-link js-scroll-trigger" href="#experience"
+              >Experience</a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#experience"
-              >Experience</a
+            <a class="nav-link js-scroll-trigger" href="#qualifications"
+              >Qualifications</a
             >
           </li>
           <li class="nav-item">
@@ -88,14 +93,14 @@
             <a class="nav-link js-scroll-trigger" href="#gallery">Gallery</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-          </li>
-          <li class="nav-item">
             <a
               class="nav-link js-scroll-trigger"
               href="https://cmadusankahw.github.io/blog"
               ><b>Blog</b></a
             >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
           </li>
         </ul>
       </div>
@@ -111,12 +116,25 @@
             Chiran
             <span class="text-primary"> Hewawitharana</span>
           </h1>
-          <div class="subheading sub-spec mb-4">
-            <a href="" class="typewrite typewriter-text" data-period="2000" data-type='[ "UNDERGRADUATE.", "MICROSOFT LEARN AMBASSADOR.", "TECH ENTHUSIAST.", "RESEARCHER.", "BLOGGER." ]'>
-              <span class="wrap"></span>
+          <div class="subheading sub-spec mb-4" style="font-weight: bold">
+            <a
+              href=""
+              class="typewrite typewriter-text"
+              data-period="2000"
+              data-type='[ " UNDERGRADUATE.", " MICROSOFT LEARN AMBASSADOR.", " TECH ENTHUSIAST.", " RESEARCHER.", " BLOGGER." ]'
+            >
+              <span class="wrap"> </span>
             </a>
           </div>
-          <p class="mb-3" style="max-width: 500px">
+          <p
+            class="mb-3"
+            style="
+              max-width: 550px;
+              text-align: justify;
+              color: rgb(99, 96, 96);
+              font-size: 17px;
+            "
+          >
             An enthusiastic, hardworking, self-motivated young individual,
             passionate in learning and developing innovative programs and having
             good experience in teamwork, looking forward to work in a
@@ -177,132 +195,66 @@
       </section>
 
       <script>
-      var TxtType = function(el, toRotate, period) {
-        this.toRotate = toRotate;
-        this.el = el;
-        this.loopNum = 0;
-        this.period = parseInt(period, 10) || 2000;
-        this.txt = '';
-        this.tick();
-        this.isDeleting = false;
-    };
+        var TxtType = function (el, toRotate, period) {
+          this.toRotate = toRotate;
+          this.el = el;
+          this.loopNum = 0;
+          this.period = parseInt(period, 10) || 2000;
+          this.txt = "";
+          this.tick();
+          this.isDeleting = false;
+        };
 
-    TxtType.prototype.tick = function() {
-        var i = this.loopNum % this.toRotate.length;
-        var fullTxt = this.toRotate[i];
+        TxtType.prototype.tick = function () {
+          var i = this.loopNum % this.toRotate.length;
+          var fullTxt = this.toRotate[i];
 
-        if (this.isDeleting) {
-        this.txt = fullTxt.substring(0, this.txt.length - 1);
-        } else {
-        this.txt = fullTxt.substring(0, this.txt.length + 1);
-        }
+          if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+          } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+          }
 
-        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+          this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
 
-        var that = this;
-        var delta = 200 - Math.random() * 100;
+          var that = this;
+          var delta = 200 - Math.random() * 100;
 
-        if (this.isDeleting) { delta /= 2; }
+          if (this.isDeleting) {
+            delta /= 2;
+          }
 
-        if (!this.isDeleting && this.txt === fullTxt) {
-        delta = this.period;
-        this.isDeleting = true;
-        } else if (this.isDeleting && this.txt === '') {
-        this.isDeleting = false;
-        this.loopNum++;
-        delta = 500;
-        }
+          if (!this.isDeleting && this.txt === fullTxt) {
+            delta = this.period;
+            this.isDeleting = true;
+          } else if (this.isDeleting && this.txt === "") {
+            this.isDeleting = false;
+            this.loopNum++;
+            delta = 500;
+          }
 
-        setTimeout(function() {
-        that.tick();
-        }, delta);
-    };
+          setTimeout(function () {
+            that.tick();
+          }, delta);
+        };
 
-    window.onload = function() {
-        var elements = document.getElementsByClassName('typewrite');
-        for (var i=0; i<elements.length; i++) {
-            var toRotate = elements[i].getAttribute('data-type');
-            var period = elements[i].getAttribute('data-period');
+        window.onload = function () {
+          var elements = document.getElementsByClassName("typewrite");
+          for (var i = 0; i < elements.length; i++) {
+            var toRotate = elements[i].getAttribute("data-type");
+            var period = elements[i].getAttribute("data-period");
             if (toRotate) {
               new TxtType(elements[i], JSON.parse(toRotate), period);
             }
-        }
-        // INJECT CSS
-        var css = document.createElement("style");
-        css.type = "text/css";
-        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid transparent}";
-        document.body.appendChild(css);
-    };
-  </script>
-
-      <!--====================================================
-                          ACADEMIC QUALIFICATIONS
-    ======================================================-->
-      <section
-        class="resume-section p-3 p-lg-5 d-flex flex-column"
-        id="qualifications"
-      >
-        <div class="row my-auto">
-          <div class="col-12">
-            <h2 class="text-center">Academic Qualifications</h2>
-            <div class="mb-5 heading-border"></div>
-          </div>
-          <div class="main-award" id="award-box">
-            <div class="award">
-              <div class="award-icon"></div>
-              <div class="award-content">
-                <span class="date">Feb 2018 - Feb 2022</span>
-                <h5 class="title">
-                  B.Sc.(hons) in Management and Information Technology
-                </h5>
-                <p class="description">
-                  Reading for B.Sc. (honours) in Management and Information
-                  Technology at University of Kelaniya - Specializing in
-                  Information Technology
-                  <br /><br />
-                  <span style="font-size: 14px"
-                    >First Class Honours<br />
-                    Current GPA: (3.90 out of 4.00)</span
-                  >
-                </p>
-              </div>
-            </div>
-            <div class="award">
-              <div class="award-icon"></div>
-              <div class="award-content">
-                <span class="date">Aug 2020 - Aug 2021</span>
-                <h5 class="title">
-                  Micro-Masters in Statistics and Data Science
-                </h5>
-                <p class="description">
-                  Reading for Statistics and Data Science Micro-Masters at Massachusetts Institute of Technology
-                </p>
-              </div>
-            </div>
-            <div class="award">
-              <div class="award-icon"></div>
-              <div class="award-content">
-                <span class="date">Aug 2016</span>
-                <h5 class="title">G.C.E. Advanced Level Examination</h5>
-                <p class="description">Rahula College, Matara</p>
-                <p class="description">
-                  Physical Science <br />
-                  (Information Technology, Combined Matematics and Physics)
-                </p>
-              </div>
-            </div>
-            <div class="award">
-              <div class="award-icon"></div>
-              <div class="award-content">
-                <span class="date">Dec 2011</span>
-                <h5 class="title">G.C.E. Ordinary Level Examination</h5>
-                <p class="description">Rahula College, Matara</p>
-                <p class="description">9 'A' Passes</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+          }
+          // INJECT CSS
+          var css = document.createElement("style");
+          css.type = "text/css";
+          css.innerHTML =
+            ".typewrite > .wrap { border-right: 0.08em solid transparent}";
+          document.body.appendChild(css);
+        };
+      </script>
 
       <!--====================================================
                         EXPERIENCE
@@ -315,53 +267,59 @@
           </div>
           <div class="resume-item col-md-12 col-sm-12">
             <div
-              class="card mx-0 p-4 mb-5"
-              style="
-                border-color: #040fa5;
-                box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21);
-              "
+              class="card mx-0 p-5 mb-3"
+              style="box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21)"
             >
-              <div class="row">
-                <div class="col-md-5 col-sm-4">
-                  <img src="img/zone.png" style="width: 100%" />
-                </div>
-                <div class="col-md-7 col-sm-8">
-                  <div class="resume-content mr-auto">
-                    <h4 class="mb-3">
-                      <i class="fa fa-building mr-3" style="color: #040fa5"></i>
-                      Trainee Associate Software Engineer at Zone24x7 Inc.
-                    </h4>
+              <div class="resume-content mr-auto">
+                <h4 class="mb-3">
+                  <i class="fa fa-building mr-3" style="color: #040fa5"></i>
+                  Trainee Associate Software Engineer at Zone24x7 Inc.
+                </h4>
+
+                <div class="row">
+                  <div class="col-md-5 col-sm-4">
+                    <img src="img/zone.png" style="width: 100%" />
+                  </div>
+                  <div
+                    class="col-md-7 col-sm-8"
+                    style="display: flex; align-items: center"
+                  >
                     <p style="text-align: justify">
                       I was fortunate to join
                       <a href="https://zone24x7.com/analytics-center/"
                         ><b>Zone24x7 Inc</b>
                       </a>
-                      , as a Trainee Associate Software Engineer in Big Data and Data Science Engineering. There I got the opportunity to learn and contribute to the data science and data engineering projects driven by 
+                      , as a Trainee Associate Software Engineer in Big Data and
+                      Data Science Engineering. There I got the opportunity to
+                      learn and contribute to the data science and data
+                      engineering projects driven by
                       <b> Zone24x7 Analytics Center(TM).</b>
-                      <br>
-                      Zone24x7 Analytics Center(TM) data platform is a fully-fledged insight brokering platform that helps businesses harness the full potential of their enterprise digital assets. It is also a cloud-agnostic platform that consists of three powerful modules, Data Engineering; Insight Generation, and Data Visualization.
+                      <br />
+                      Zone24x7 Analytics Center(TM) data platform is a
+                      fully-fledged insight brokering platform that helps
+                      businesses harness the full potential of their enterprise
+                      digital assets. It is also a cloud-agnostic platform that
+                      consists of three powerful modules, Data Engineering;
+                      Insight Generation, and Data Visualization.
                       <br /><br />
                       <b>Technology Stack:</b>
                       <br />
-                      Python, Java, Scala, Apache Spark, Spark
-                      MLlib, Apache Hbase, Apache Hive, Apache Airflow, SQL,
-                      AWS, Azure, ELK Stack
+                      Python, Java, Scala, Apache Spark, Spark MLlib, Apache
+                      Hbase, Apache Hive, Apache Airflow, SQL, AWS, Azure, ELK
+                      Stack
                     </p>
-                  </div>
-                  <div class="resume-date text-md-right">
-                    <span class="text-primary">August 2020 - Present</span>
                   </div>
                 </div>
               </div>
+              <div class="resume-date text-md-right">
+                <span class="text-primary">August 2020 - Present</span>
+              </div>
             </div>
           </div>
-          <div class="resume-item col-md-6 col-sm-12">
+          <div class="resume-item col-md-12 col-sm-12">
             <div
-              class="card mx-0 p-4 mb-5"
-              style="
-                border-color: #040fa5;
-                box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21);
-              "
+              class="card mx-0 p-5 mb-3"
+              style="box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21)"
             >
               <div class="resume-content mr-auto">
                 <h4 class="mb-3">
@@ -391,13 +349,10 @@
               </div>
             </div>
           </div>
-          <div class="resume-item col-md-6 col-sm-12">
+          <div class="resume-item col-md-12 col-sm-12">
             <div
-              class="card mx-0 p-4 mb-5"
-              style="
-                border-color: #17a2b8;
-                box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21);
-              "
+              class="card mx-0 p-5 mb-3"
+              style="box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21)"
             >
               <div class="resume-content mr-auto">
                 <h4 class="mb-3">
@@ -414,7 +369,6 @@
                   I’m responsible for handling technology operations, full-stack
                   mobile and web development, and DevOps.
                   <br />
-                  <br />
                   <b> Projects:</b><br />
                   <a href="http:/handsfree.lk">handsfree.lk</a> |
                   <a href="http://hackx.lk">hackx.lk</a> |
@@ -428,13 +382,10 @@
               </div>
             </div>
           </div>
-          <div class="resume-item col-md-6 col-sm-12">
+          <div class="resume-item col-md-12 col-sm-12">
             <div
-              class="card mx-0 p-4 mb-5"
-              style="
-                border-color: #17a2b8;
-                box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21);
-              "
+              class="card mx-0 p-5 mb-3"
+              style="box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21)"
             >
               <div class="resume-content mr-auto">
                 <h4 class="mb-3">
@@ -446,15 +397,18 @@
                   <a
                     href="https://www.linkedin.com/feed/update/urn:li:activity:6585720061787500544/"
                     >Chief coordinator of the hackX 2019</a
-                  >, Inter-University Startup Challenge which was organized by the
-                  Industrial Management Science Students' Association,known as the most awaited inter-university hackathon among
-                  Sri Lankan undergraduates, which brings young innovative
-                  minds to come up with technology-based solutions for
-                  prevailing problems. <br><br>Credits goes to all the Industrial Partners
-                  including<b>
+                  >, Inter-University Startup Challenge which was organized by
+                  the Industrial Management Science Students' Association,known
+                  as the most awaited inter-university hackathon among Sri
+                  Lankan undergraduates, which brings young innovative minds to
+                  come up with technology-based solutions for prevailing
+                  problems. <br /><br />Credits goes to all the Industrial
+                  Partners including<b>
                     ISM APAC, London Stock Exchange Group, Zone24x7 Inc, Sysco
-                    Lab,Ideamart and Pulse</b>, respected panel of Lecturers of the Department of Industrial
-                  Management and the fellow MITians for making the <b> hackX</b> possible. <br />
+                    Lab,Ideamart and Pulse</b
+                  >, respected panel of Lecturers of the Department of
+                  Industrial Management and the fellow MITians for making the
+                  <b> hackX</b> possible. <br />
                   <a
                     href="http://www.pulse.lk/everythingelse/hackx-is-back-the-return-of-the-successful-hackathon/"
                   >
@@ -468,13 +422,10 @@
               </div>
             </div>
           </div>
-          <div class="resume-item col-md-6 col-sm-12">
+          <div class="resume-item col-md-12 col-sm-12">
             <div
-              class="card mx-0 p-4 mb-5"
-              style="
-                border-color: #040fa5;
-                box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21);
-              "
+              class="card mx-0 p-5 mb-5"
+              style="box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21)"
             >
               <div class="resume-content mr-auto">
                 <h4 class="mb-3">
@@ -486,22 +437,12 @@
                 </h4>
                 <p style="text-align: justify">
                   Started my career as a Sales-Executive at Singer Sri Lanka,
-                  Matara branch in 2016. And I promoted to the Senior Branch Recovery Officer in 2017.
-                  <br /><br />
-                  I was awarded as the Best Branch Assistant at
-                  Singer - Sisil Galle District Assitant Day 2017, which was held at Embilipitiya, Sri Lanka.
-                  <div class="resume-date text-md-right">
-                    <span class="text-primary">November 2016 - February 2018</span>
-                  </div>
-                  <br><br>
-                  <h4 class="mb-3">
-                    <i
-                      class="fa fa-building mr-3 text-primary"
-                      style="color: #040fa5"
-                    ></i>
-                    Sales Executive at Jayasekara Enterprises
-                  </h4>
-                  I got my very first Industrial Experience as a Branch Assistant in Sales and Systems, at Jayasekara Enterprises Matara, Sri Lanka in 2015.
+                  Matara branch in 2016. And I promoted to the Senior Branch
+                  Recovery Officer in 2017.
+                  <br />
+                  I was awarded as the Best Branch Assistant at Singer - Sisil
+                  Galle District Assitant Day 2017, which was held at
+                  Embilipitiya, Sri Lanka.
                 </p>
               </div>
               <div class="resume-date text-md-right">
@@ -513,7 +454,7 @@
       </section>
 
       <!--====================================================
-                           PROFESSIONAL QUALIFICATIONS
+                          ACADEMIC QUALIFICATIONS
     ======================================================-->
       <section
         class="resume-section p-3 p-lg-5 d-flex flex-column"
@@ -521,19 +462,43 @@
       >
         <div class="row my-auto">
           <div class="col-12">
-            <h2 class="text-center">Professional Qualifications</h2>
+            <h2 class="text-center">Qualifications</h2>
             <div class="mb-5 heading-border"></div>
           </div>
           <div class="main-award" id="award-box">
             <div class="award">
               <div class="award-icon"></div>
               <div class="award-content">
-                <span class="date">August 2020- December 2020</span>
+                <span class="date">Feb 2018 - Feb 2022</span>
                 <h5 class="title">
-                  Professional Certificate in Machine Learning (from Linear Models to Deep Learning) : MIT 6.86x
+                  B.Sc.(hons) in Management and Information Technology
                 </h5>
                 <p class="description">
-                  Issued by Massachusetts Institute of Technology, USA
+                  Reading for B.Sc. (honours) in Management and Information
+                  Technology at University of Kelaniya - Specializing in
+                  Information Technology
+                  <br />
+                  <small
+                    >First Class Honours<br />
+                    Current GPA: (3.90 out of 4.00)</small
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="award">
+              <div class="award-icon"></div>
+              <div class="award-content">
+                <span class="date">Aug 2020 - Aug 2021</span>
+                <h5 class="title">
+                  Micro-Masters in Statistics and Data Science
+                </h5>
+                <p class="description">
+                  Reading for Statistics and Data Science Micro-Masters at
+                  Massachusetts Institute of Technology <br />
+                  <small>
+                    Level 1 : Machine Learning (from Linear Models to Deep
+                    Learning) : MIT 6.86x Completed
+                  </small>
                 </p>
               </div>
             </div>
@@ -544,9 +509,7 @@
                 <h5 class="title">
                   Professional Certificate in Machine Learning
                 </h5>
-                <p class="description">
-                  Issued by Stanford University, USA
-                </p>
+                <p class="description">Issued by Stanford University, USA</p>
               </div>
             </div>
             <div class="award">
@@ -556,9 +519,7 @@
                 <h5 class="title">
                   Professional Certificate: DeepLearning.AI TensorFlow Developer
                 </h5>
-                <p class="description">
-                  deeplearning.ai
-                </p>
+                <p class="description">Issued by deeplearning.ai</p>
               </div>
             </div>
             <div class="award">
@@ -566,9 +527,8 @@
               <div class="award-content">
                 <span class="date">Nov 2019- Apr 2019</span>
                 <h5 class="title">
-                  Diploma in Artificial Intelligence
+                  Diploma in Machine Learning, Deep Learning & Image processing
                 </h5>
-                <h6 class="title">(Machine Learning, Deep Learning & Image processing)</h6>
                 <p class="description">
                   At Academy of Innovative Education Sri Lanka
                 </p>
@@ -589,6 +549,18 @@
                 <h5 class="title">Diploma in English Language</h5>
                 <p class="description">
                   At British Way English Academy, Matara
+                </p>
+              </div>
+            </div>
+            <div class="award">
+              <div class="award-icon"></div>
+              <div class="award-content">
+                <span class="date">Aug 2016</span>
+                <h5 class="title">G.C.E. Advanced Level Examination</h5>
+                <p class="description">Rahula College, Matara</p>
+                <p class="description">
+                  Physical Science <br />
+                  (Information Technology, Combined Matematics and Physics)
                 </p>
               </div>
             </div>
@@ -618,6 +590,12 @@
               </button>
               <button
                 class="btn btn-general btn-green filter-b"
+                data-filter="ml"
+              >
+                Data Science
+              </button>
+              <button
+                class="btn btn-general btn-green filter-b"
                 data-filter="web"
               >
                 Web Applications
@@ -626,13 +604,7 @@
                 class="btn btn-general btn-green filter-b"
                 data-filter="mobile"
               >
-                Mobile Apps
-              </button>
-              <button
-                class="btn btn-general btn-green filter-b"
-                data-filter="ml"
-              >
-                Machine Learinig
+                Mobile Applications
               </button>
               <button
                 class="btn btn-general btn-green filter-b"
@@ -643,9 +615,9 @@
             </div>
           </div>
         </div>
-        <div class="row my-auto" style="margin-left:20px !important; margin-right:20px !important;">
+        <div class="row my-auto card-cls">
           <!--- web apps-->
-          <div class="col-sm-4 portfolio-item filter web">
+          <div class="col-sm-4 portfolio-item card-all filter web">
             <a
               class="portfolio-link"
               href="#portfolioModalw1"
@@ -663,103 +635,33 @@
                 alt=""
               />
             </a>
-          </div>
-          <div class="col-sm-4 portfolio-item filter web">
-            <a
-              class="portfolio-link"
-              href="#portfolioModalw2"
-              data-toggle="modal"
-            >
-              <div class="caption-port">
-                <div class="caption-port-content">
-                  <i class="fa fa-info-circle fa-2x"></i> <br />
-                  More Info
-                </div>
+            <div class="card-bottom">
+              <span class="card-tag"> Angular2 </span>
+              <span class="card-tag"> Node JS </span>
+              <span class="card-tag"> Express </span>
+              <span class="card-tag"> MongoDB </span>
+              <span class="card-tag"> Chart.js </span>
+
+              <br />
+              <p>
+                Evenza" Smart Event Management Platform is an online event
+                management and resourcing platform that serves the functionality
+                of an event manager as well as providing access to event-related
+                resources by connecting relevant ...
+              </p>
+              <div class="card-button">
+                <a
+                  class="btn btn-general btn-green"
+                  href="#portfolioModalw1"
+                  data-toggle="modal"
+                >
+                  Read More
+                </a>
               </div>
-              <img
-                class="img-fluid project-img"
-                src="img/portfolio/w2.png"
-                alt=""
-              />
-            </a>
+            </div>
           </div>
-          <div class="col-sm-4 portfolio-item filter web">
-            <a
-              class="portfolio-link"
-              href="#portfolioModalw3"
-              data-toggle="modal"
-            >
-              <div class="caption-port">
-                <div class="caption-port-content">
-                  <i class="fa fa-info-circle fa-2x"></i> <br />
-                  More Info
-                </div>
-              </div>
-              <img
-                class="img-fluid project-img"
-                src="img/portfolio/w3.png"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="col-sm-4 portfolio-item filter web">
-            <a
-              class="portfolio-link"
-              href="#portfolioModalw4"
-              data-toggle="modal"
-            >
-              <div class="caption-port">
-                <div class="caption-port-content">
-                  <i class="fa fa-info-circle fa-2x"></i> <br />
-                  More Info
-                </div>
-              </div>
-              <img
-                class="img-fluid project-img"
-                src="img/portfolio/w4.png"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="col-sm-4 portfolio-item filter web">
-            <a
-              class="portfolio-link"
-              href="#portfolioModalw7"
-              data-toggle="modal"
-            >
-              <div class="caption-port">
-                <div class="caption-port-content">
-                  <i class="fa fa-info-circle fa-2x"></i> <br />
-                  More Info
-                </div>
-              </div>
-              <img
-                class="img-fluid project-img"
-                src="img/portfolio/w7.png"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="col-sm-4 portfolio-item filter web">
-            <a
-              class="portfolio-link"
-              href="#portfolioModalw6"
-              data-toggle="modal"
-            >
-              <div class="caption-port">
-                <div class="caption-port-content">
-                  <i class="fa fa-info-circle fa-2x"></i> <br />
-                  More Info
-                </div>
-              </div>
-              <img
-                class="img-fluid project-img"
-                src="img/portfolio/w6.png"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="col-sm-4 portfolio-item filter web">
+
+          <div class="col-sm-4 portfolio-item card-all filter web">
             <a
               class="portfolio-link"
               href="#portfolioModalw5"
@@ -777,13 +679,34 @@
                 alt=""
               />
             </a>
+            <div class="card-bottom">
+              <span class="card-tag"> React JS </span>
+              <span class="card-tag"> Context API </span>
+              <span class="card-tag"> React Hooks </span>
+              <span class="card-tag"> Firebase </span>
+              <br />
+              <p>
+                Fully functional e-commerce web-store with real-time payments
+                processing, user authentication, cart-add, and checkout
+                features, build with React JS and using Firebase real-time
+                database and Firebase cloud-functions as the backend ...
+              </p>
+              <div class="card-button">
+                <a
+                  class="btn btn-general btn-green"
+                  href="#portfolioModalw5"
+                  data-toggle="modal"
+                >
+                  Read More
+                </a>
+              </div>
+            </div>
           </div>
 
-          <!-- mobile apps-->
-          <div class="col-sm-2 portfolio-item filter mobile">
+          <div class="col-sm-4 portfolio-item card-all filter web">
             <a
               class="portfolio-link"
-              href="#portfolioModalm1"
+              href="#portfolioModalw2"
               data-toggle="modal"
             >
               <div class="caption-port">
@@ -794,71 +717,170 @@
               </div>
               <img
                 class="img-fluid project-img"
-                src="img/portfolio/m1.png"
+                src="img/portfolio/w2.png"
                 alt=""
               />
             </a>
-          </div>
-          <div class="col-sm-2 portfolio-item filter mobile">
-            <a
-              class="portfolio-link"
-              href="#portfolioModalm2"
-              data-toggle="modal"
-            >
-              <div class="caption-port">
-                <div class="caption-port-content">
-                  <i class="fa fa-info-circle fa-2x"></i> <br />
-                  More Info
-                </div>
+            <div class="card-bottom">
+              <span class="card-tag"> HTML </span>
+              <span class="card-tag"> CSS </span>
+              <span class="card-tag"> JS </span>
+              <span class="card-tag"> Google Maps API </span>
+              <span class="card-tag"> PHP </span>
+              <span class="card-tag"> Bootstrap </span>
+
+              <br />
+              <p>
+                BestDriver is an interactive web-based platform for instant and
+                secure Tour and taxi booking mainly targeted at Foreigners
+                traveling to Sri Lanka.The platform is able to provide real-time
+                taxi and tour bookings ...
+              </p>
+              <div class="card-button">
+                <a
+                  class="btn btn-general btn-green"
+                  href="#portfolioModalw2"
+                  data-toggle="modal"
+                >
+                  Read More
+                </a>
               </div>
-              <img
-                class="img-fluid project-img"
-                src="img/portfolio/m2.jpg"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="col-sm-2 portfolio-item filter mobile">
-            <a
-              class="portfolio-link"
-              href="#portfolioModalm3"
-              data-toggle="modal"
-            >
-              <div class="caption-port">
-                <div class="caption-port-content">
-                  <i class="fa fa-info-circle fa-2x"></i> <br />
-                  More Info
-                </div>
-              </div>
-              <img
-                class="img-fluid project-img"
-                src="img/portfolio/m3.jpg"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="col-sm-2 portfolio-item filter mobile">
-            <a
-              class="portfolio-link"
-              href="#portfolioModalm4"
-              data-toggle="modal"
-            >
-              <div class="caption-port">
-                <div class="caption-port-content">
-                  <i class="fa fa-info-circle fa-2x"></i> <br />
-                  More Info
-                </div>
-              </div>
-              <img
-                class="img-fluid project-img"
-                src="img/portfolio/m4.png"
-                alt=""
-              />
-            </a>
+            </div>
           </div>
 
-          <!-- Machine Learninig-->
-          <div class="col-sm-4 portfolio-item filter ml">
+          <div class="col-sm-4 portfolio-item card-all filter web">
+            <a
+              class="portfolio-link"
+              href="#portfolioModalw3"
+              data-toggle="modal"
+            >
+              <div class="caption-port">
+                <div class="caption-port-content">
+                  <i class="fa fa-info-circle fa-2x"></i> <br />
+                  More Info
+                </div>
+              </div>
+              <img
+                class="img-fluid project-img"
+                src="img/portfolio/w3.png"
+                alt=""
+              />
+            </a>
+            <div class="card-bottom">
+              <span class="card-tag"> HTML </span>
+              <span class="card-tag"> CSS </span>
+              <span class="card-tag"> JS </span>
+              <span class="card-tag"> Bootstrap </span>
+              <span class="card-tag"> PHP </span>
+
+              <br />
+              <p>
+                LKMarts.com and Pharmasiya.com online retail web stores were
+                developed in March 2020 where the whole country was locked-down
+                due to the covid-19 pandemic. People were suffering from the ...
+              </p>
+              <div class="card-button">
+                <a
+                  class="btn btn-general btn-green"
+                  href="#portfolioModalw3"
+                  data-toggle="modal"
+                >
+                  Read More
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4 portfolio-item card-all filter web">
+            <a
+              class="portfolio-link"
+              href="#portfolioModalw7"
+              data-toggle="modal"
+            >
+              <div class="caption-port">
+                <div class="caption-port-content">
+                  <i class="fa fa-info-circle fa-2x"></i> <br />
+                  More Info
+                </div>
+              </div>
+              <img
+                class="img-fluid project-img"
+                src="img/portfolio/w7.png"
+                alt=""
+              />
+            </a>
+            <div class="card-bottom">
+              <span class="card-tag"> HTML </span>
+              <span class="card-tag"> CSS </span>
+              <span class="card-tag"> JS </span>
+              <span class="card-tag"> Bootstrap </span>
+              <span class="card-tag"> PHP </span>
+
+              <br />
+              <p>
+                Majestic hotels, Interactive Web Front-end was deveoped using
+                HTML, CSS, JavaScript, and bootstrap for Styling for the
+                web-based project submitted for the university. This application
+                is capable of handling room reservations ...
+              </p>
+              <div class="card-button">
+                <a
+                  class="btn btn-general btn-green"
+                  href="#portfolioModalw7"
+                  data-toggle="modal"
+                >
+                  Read More
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4 portfolio-item card-all filter web">
+            <a
+              class="portfolio-link"
+              href="#portfolioModalw6"
+              data-toggle="modal"
+            >
+              <div class="caption-port">
+                <div class="caption-port-content">
+                  <i class="fa fa-info-circle fa-2x"></i> <br />
+                  More Info
+                </div>
+              </div>
+              <img
+                class="img-fluid project-img"
+                src="img/portfolio/w6.png"
+                alt=""
+              />
+            </a>
+            <div class="card-bottom">
+              <span class="card-tag"> HTML </span>
+              <span class="card-tag"> CSS </span>
+              <span class="card-tag"> JS </span>
+              <span class="card-tag"> Bootstrap </span>
+              <span class="card-tag"> DialogFlow </span>
+
+              <br />
+              <p>
+                This interactive Sign-page web application was developed as the
+                Official Web Site for HackX 2019 Inter-University Startup
+                Challenge organized by Department of Industrial Management at
+                University of Kelaniya ...
+              </p>
+              <div class="card-button">
+                <a
+                  class="btn btn-general btn-green"
+                  href="#portfolioModalw6"
+                  data-toggle="modal"
+                >
+                  Read More
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data Science-->
+          <div class="col-sm-4 portfolio-item card-all filter ml">
             <a
               class="portfolio-link box-gallery"
               href="#portfolioModalml1"
@@ -876,8 +898,32 @@
                 alt=""
               />
             </a>
+            <div class="card-bottom">
+              <span class="card-tag data-science"> Python </span>
+              <span class="card-tag data-science"> OpenCV </span>
+              <span class="card-tag data-science"> TensorFlow </span>
+              <span class="card-tag data-science"> Keras </span>
+              <span class="card-tag data-science"> Arduno </span>
+
+              <br />
+              <p>
+                smartCop is a smart solution based on deep learning, to manage
+                road traffic and prevent road-accidents in an innovative;
+                automated way. The project was developed using ...
+              </p>
+              <div class="card-button">
+                <a
+                  class="btn btn-general btn-green"
+                  href="#portfolioModalml1"
+                  data-toggle="modal"
+                >
+                  Read More
+                </a>
+              </div>
+            </div>
           </div>
-          <div class="col-sm-4 portfolio-item filter ml">
+
+          <div class="col-sm-4 portfolio-item card-all filter ml">
             <a
               class="portfolio-link"
               href="#portfolioModalml2"
@@ -895,10 +941,76 @@
                 alt=""
               />
             </a>
+            <div class="card-bottom">
+              <span class="card-tag data-science"> Python </span>
+              <span class="card-tag data-science"> PyQt5 </span>
+              <span class="card-tag data-science"> OpenCV </span>
+              <span class="card-tag data-science"> TensorFlow </span>
+              <span class="card-tag data-science"> Keras </span>
+              <span class="card-tag data-science"> Firebase </span>
+
+              <br />
+              <p>
+                CareGiver AI's face recognition was based on two approaches
+                using face landmarks techniques; where a Machine Learning
+                approach with K-Means clustering to classify faces considering
+                the ...
+              </p>
+              <div class="card-button">
+                <a
+                  class="btn btn-general btn-green"
+                  href="#portfolioModalml2"
+                  data-toggle="modal"
+                >
+                  Read More
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4 portfolio-item card-all filter ml">
+            <a
+              class="portfolio-link"
+              href="#portfolioModalml3"
+              data-toggle="modal"
+            >
+              <div class="caption-port">
+                <div class="caption-port-content">
+                  <i class="fa fa-info-circle fa-2x"></i> <br />
+                  More Info
+                </div>
+              </div>
+              <img
+                class="img-fluid project-img"
+                src="img/portfolio/ml3.png"
+                alt=""
+              />
+            </a>
+            <div class="card-bottom">
+              <span class="card-tag data-science"> Scala </span>
+              <span class="card-tag data-science"> Spark </span>
+              <span class="card-tag data-science"> Spark Ml </span>
+              <br />
+              <p>
+                Recommendation systems can be defined as software applications
+                that draw out and learn from data such as preferences, their
+                actions (clicks, for example), browsing history, and generated
+                recommendations ...
+              </p>
+              <div class="card-button">
+                <a
+                  class="btn btn-general btn-green"
+                  href="#portfolioModalml3"
+                  data-toggle="modal"
+                >
+                  Read More
+                </a>
+              </div>
+            </div>
           </div>
 
           <!-- desktop applications-->
-          <div class="col-sm-4 portfolio-item filter desktop">
+          <div class="col-sm-4 portfolio-item card-all filter desktop">
             <a
               class="portfolio-link"
               href="#portfolioModald1"
@@ -916,8 +1028,31 @@
                 alt=""
               />
             </a>
+            <div class="card-bottom">
+              <span class="card-tag desktop-apps"> C# </span>
+              <span class="card-tag desktop-apps"> Crystal Reports </span>
+              <span class="card-tag desktop-apps"> MySQL </span>
+
+              <br />
+              <p>
+                An Emplyee Management Stand-alone system was developed using C#
+                and MySQL for a Garment Factory located at Kegalle. This project
+                was developed in partnered with AccSeedd Solutions. The project
+                was ...
+              </p>
+              <div class="card-button">
+                <a
+                  class="btn btn-general btn-green"
+                  href="#portfolioModald1"
+                  data-toggle="modal"
+                >
+                  Read More
+                </a>
+              </div>
+            </div>
           </div>
-          <div class="col-sm-4 portfolio-item filter desktop">
+
+          <div class="col-sm-4 portfolio-item card-all filter desktop">
             <a
               class="portfolio-link"
               href="#portfolioModald2"
@@ -935,11 +1070,37 @@
                 alt=""
               />
             </a>
+            <div class="card-bottom">
+              <span class="card-tag desktop-apps"> Java </span>
+              <span class="card-tag desktop-apps"> Java Swing </span>
+              <span class="card-tag desktop-apps"> MySQL </span>
+              <br />
+              <p>
+                An Educational Institue Management System was developed using
+                Java, Swing and MySQL for the Sipyana Higher educational
+                Institue in Matara submitted as the first-year development
+                project to the university ...
+              </p>
+              <div class="card-button">
+                <a
+                  class="btn btn-general btn-green"
+                  href="#portfolioModald2"
+                  data-toggle="modal"
+                >
+                  Read More
+                </a>
+              </div>
+            </div>
           </div>
-          <div class="col-sm-4 portfolio-item filter desktop">
+
+          <!-- mobile apps-->
+
+          <div
+            class="col-sm-2 portfolio-item card-all card-all-mobile filter mobile"
+          >
             <a
               class="portfolio-link"
-              href="#portfolioModald3"
+              href="#portfolioModalm3"
               data-toggle="modal"
             >
               <div class="caption-port">
@@ -950,86 +1111,227 @@
               </div>
               <img
                 class="img-fluid project-img"
-                src="img/portfolio/d3.png"
+                src="img/portfolio/m3.png"
                 alt=""
               />
             </a>
+            <div class="card-bottom">
+              <span class="card-tag mobile-apps"> React Native </span>
+              <span class="card-tag mobile-apps"> Expo CLI </span>
+              <span class="card-tag mobile-apps"> Redux </span>
+              <span class="card-tag mobile-apps"> Firebase </span>
+              <br />
+              <p>
+                This is an Instagram clone developed with React Native on Expo
+                CLI with support of Redux based State Management. Backend and
+                database is handled using Firebase Realtime Database and Cloud
+                Functions. Google Cloud Bucket storage is used for ...
+              </p>
+              <div class="card-button">
+                <a
+                  class="btn btn-general btn-green"
+                  href="#portfolioModalm3"
+                  data-toggle="modal"
+                >
+                  Read More
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-sm-2 portfolio-item card-all card-all-mobile filter mobile"
+          >
+            <a
+              class="portfolio-link"
+              href="#portfolioModalm2"
+              data-toggle="modal"
+            >
+              <div class="caption-port">
+                <div class="caption-port-content">
+                  <i class="fa fa-info-circle fa-2x"></i> <br />
+                  More Info
+                </div>
+              </div>
+              <img
+                class="img-fluid project-img"
+                src="img/portfolio/m2.jpg"
+                alt=""
+              />
+            </a>
+            <div class="card-bottom">
+              <span class="card-tag mobile-apps"> Unity3D </span>
+              <span class="card-tag mobile-apps"> Android SDK </span>
+              <span class="card-tag mobile-apps"> C# </span>
+              <br />
+              <p>
+                DdecoAR is an Augmented Reality supported mobile application
+                that provides an e-commerce platform for interior designs and
+                bath ware products with a realistic experience. Customers can
+                view products in the real-world environment before purchase ...
+              </p>
+              <div class="card-button">
+                <a
+                  class="btn btn-general btn-green"
+                  href="#portfolioModalm2"
+                  data-toggle="modal"
+                >
+                  Read More
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-sm-2 portfolio-item card-all card-all-mobile filter mobile"
+          >
+            <a
+              class="portfolio-link"
+              href="#portfolioModalm1"
+              data-toggle="modal"
+            >
+              <div class="caption-port">
+                <div class="caption-port-content">
+                  <i class="fa fa-info-circle fa-2x"></i> <br />
+                  More Info
+                </div>
+              </div>
+              <img
+                class="img-fluid project-img"
+                src="img/portfolio/m1.png"
+                alt=""
+              />
+            </a>
+            <div class="card-bottom">
+              <span class="card-tag mobile-apps"> Angular2 PWA </span>
+              <span class="card-tag mobile-apps"> MongoDB </span>
+              <br />
+              <p>
+                This project is the Progressive Web Application(PWA) developed
+                for the Evenza - Smart Event Management and Resourcing Platform.
+                Progressive Web Application generated with angular-PWA, It has
+                the capability of managing a cache in local storage ...
+              </p>
+              <div class="card-button">
+                <a
+                  class="btn btn-general btn-green"
+                  href="#portfolioModalm1"
+                  data-toggle="modal"
+                >
+                  Read More
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="row my-auto pt-4">
-        <div id="projectFacts statistics-row" class="sectionClass">
-          <div class="fullWidth eight columns">
-              <div class="projectFactsWrap ">
-                  <div class="item wow fadeInUpBig animated animated" data-number="12" style="visibility: visible;">
-                      <i class="fa fa-briefcase"></i>
-                      <p id="number1" class="number">15</p>
-                      <span></span>
-                      <p>Projects done</p>
-                  </div>
-                  <div class="item wow fadeInUpBig animated animated" data-number="55" style="visibility: visible;">
-                      <i class="fa fa-smile-o"></i>
-                      <p id="number2" class="number">11</p>
-                      <span></span>
-                      <p>Happy clients</p>
-                  </div>
-                  <div class="item wow fadeInUpBig animated animated" data-number="359" style="visibility: visible;">
-                      <i class="fa fa-coffee"></i>
-                      <p id="number3" class="number">359</p>
-                      <span></span>
-                      <p>Cups of coffee</p>
-                  </div>
-                  <div class="item wow fadeInUpBig animated animated" data-number="246" style="visibility: visible;">
-                      <i class="fa fa-trophy"></i>
-                      <p id="number4" class="number">11</p>
-                      <span></span>
-                      <p>Honours & Awards</p>
-                  </div>
+          <div id="projectFacts statistics-row" class="sectionClass">
+            <div class="fullWidth eight columns">
+              <div class="projectFactsWrap">
+                <div
+                  class="item wow fadeInUpBig animated animated"
+                  data-number="12"
+                  style="visibility: visible"
+                >
+                  <i class="fa fa-briefcase"></i>
+                  <p id="number1" class="number">15</p>
+                  <span></span>
+                  <p>Projects done</p>
+                </div>
+                <div
+                  class="item wow fadeInUpBig animated animated"
+                  data-number="55"
+                  style="visibility: visible"
+                >
+                  <i class="fa fa-smile-o"></i>
+                  <p id="number2" class="number">11</p>
+                  <span></span>
+                  <p>Happy clients</p>
+                </div>
+                <div
+                  class="item wow fadeInUpBig animated animated"
+                  data-number="359"
+                  style="visibility: visible"
+                >
+                  <i class="fa fa-coffee"></i>
+                  <p id="number3" class="number">359</p>
+                  <span></span>
+                  <p>Cups of coffee</p>
+                </div>
+                <div
+                  class="item wow fadeInUpBig animated animated"
+                  data-number="246"
+                  style="visibility: visible"
+                >
+                  <i class="fa fa-trophy"></i>
+                  <p id="number4" class="number">11</p>
+                  <span></span>
+                  <p>Honours & Awards</p>
+                </div>
               </div>
+            </div>
           </div>
-      </div>
-    </div>
+        </div>
       </section>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script>
-	$.fn.jQuerySimpleCounter = function( options ) {
-	    var settings = $.extend({
-	        start:  0,
-	        end:    100,
-	        easing: 'swing',
-	        duration: 400,
-	        complete: ''
-	    }, options );
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script>
+        $.fn.jQuerySimpleCounter = function (options) {
+          var settings = $.extend(
+            {
+              start: 0,
+              end: 100,
+              easing: "swing",
+              duration: 400,
+              complete: "",
+            },
+            options
+          );
 
-	    var thisElement = $(this);
+          var thisElement = $(this);
 
-	    $({count: settings.start}).animate({count: settings.end}, {
-			duration: settings.duration,
-			easing: settings.easing,
-			step: function() {
-				var mathCount = Math.ceil(this.count);
-				thisElement.text(mathCount);
-			},
-			complete: settings.complete
-		});
-	};
+          $({ count: settings.start }).animate(
+            { count: settings.end },
+            {
+              duration: settings.duration,
+              easing: settings.easing,
+              step: function () {
+                var mathCount = Math.ceil(this.count);
+                thisElement.text(mathCount);
+              },
+              complete: settings.complete,
+            }
+          );
+        };
 
+        $.fn.isInViewport = function () {
+          var elementTop = $(this).offset().top;
+          var elementBottom = elementTop + $(this).outerHeight();
 
-$('#number1').jQuerySimpleCounter({end: 15,duration: 1500});
-$('#number2').jQuerySimpleCounter({end: 11,duration: 1500});
-$('#number3').jQuerySimpleCounter({end: 359,duration: 3000});
-$('#number4').jQuerySimpleCounter({end: 11,duration: 1500});
+          var viewportTop = $(window).scrollTop();
+          var viewportBottom = viewportTop + $(window).height();
 
+          return elementBottom > viewportTop && elementTop < viewportBottom;
+        };
 
-  </script>
+        $("#number1").jQuerySimpleCounter({ end: 15, duration: 1500 });
+        $("#number2").jQuerySimpleCounter({ end: 11, duration: 1500 });
+        $("#number3").jQuerySimpleCounter({ end: 359, duration: 3000 });
+        $("#number4").jQuerySimpleCounter({ end: 11, duration: 1500 });
 
+        // $(window).on("resize scroll", function () {
+        //   if ($("#statistics-row").isInViewport()) {
+        //     //Do stuff...
 
+        //   }
+        // });
+      </script>
 
       <!--====================================================
                         SKILLS
     ======================================================-->
-      <section class="d-flex flex-column mt-5" id="skill">
+      <section class="d-flex flex-column mt-5 pt-4" id="skill">
         <div class="row my-auto">
           <div class="col-12">
             <h2 class="text-center">Technical Skills</h2>
@@ -1046,8 +1348,10 @@ $('#number4').jQuerySimpleCounter({end: 11,duration: 1500});
                 <div class="row mt-3">
                   <div class="col-md-6">
                     <div class="progress-container progress-primary">
-                      <span class="progress-badge">MEAN Stack (Angular2, NodeJs, Express, MongoDB)</span>
-                      <div class="progress" style="padding-top:5px;">
+                      <span class="progress-badge"
+                        >MEAN Stack (Angular2, NodeJs, Express, MongoDB)</span
+                      >
+                      <div class="progress" style="padding-top: 5px">
                         <div
                           class="progress-bar progress-bar-primary"
                           data-aos="progress-full"
@@ -1065,8 +1369,8 @@ $('#number4').jQuerySimpleCounter({end: 11,duration: 1500});
                   </div>
                   <div class="col-md-6">
                     <div class="progress-container progress-primary">
-                      <span class="progress-badge">Java & Spring Boot</span>
-                      <div class="progress" style="padding-top:5px;">
+                      <span class="progress-badge">Java SE, Spring Boot</span>
+                      <div class="progress" style="padding-top: 5px">
                         <div
                           class="progress-bar progress-bar-primary"
                           data-aos="progress-full"
@@ -1076,7 +1380,7 @@ $('#number4').jQuerySimpleCounter({end: 11,duration: 1500});
                           aria-valuenow="60"
                           aria-valuemin="0"
                           aria-valuemax="100"
-                          style="width: 70%"
+                          style="width: 80%"
                         ></div>
                         <span class="progress-value"></span>
                       </div>
@@ -1086,48 +1390,10 @@ $('#number4').jQuerySimpleCounter({end: 11,duration: 1500});
                 <div class="row mt-3">
                   <div class="col-md-6">
                     <div class="progress-container progress-primary">
-                      <span class="progress-badge">Scala, Apache Spark,MLlib, Hive, AirFlow</span>
-                      <div class="progress" style="padding-top:5px;">
-                        <div
-                          class="progress-bar progress-bar-primary"
-                          data-aos="progress-full"
-                          data-aos-offset="10"
-                          data-aos-duration="2000"
-                          role="progressbar"
-                          aria-valuenow="60"
-                          aria-valuemin="0"
-                          aria-valuemax="100"
-                          style="width: 65%"
-                        ></div>
-                        <span class="progress-value"></span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="progress-container progress-primary">
-                      <span class="progress-badge">React JS (MERN Stack)</span>
-                      <div class="progress" style="padding-top:5px;">
-                        <div
-                          class="progress-bar progress-bar-primary"
-                          data-aos="progress-full"
-                          data-aos-offset="10"
-                          data-aos-duration="2000"
-                          role="progressbar"
-                          aria-valuenow="60"
-                          aria-valuemin="0"
-                          aria-valuemax="100"
-                          style="width: 60%"
-                        ></div>
-                        <span class="progress-value"></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row mt-3">
-                  <div class="col-md-6">
-                    <div class="progress-container progress-primary">
-                      <span class="progress-badge">Python, TensorFlow, Keras </span>
-                      <div class="progress" style="padding-top:5px;">
+                      <span class="progress-badge"
+                        >SQL, Scala, Apache Spark, Hive, AirFlow</span
+                      >
+                      <div class="progress" style="padding-top: 5px">
                         <div
                           class="progress-bar progress-bar-primary"
                           data-aos="progress-full"
@@ -1145,8 +1411,10 @@ $('#number4').jQuerySimpleCounter({end: 11,duration: 1500});
                   </div>
                   <div class="col-md-6">
                     <div class="progress-container progress-primary">
-                      <span class="progress-badge">ELK stack (ElasticSearch, Logstash, Kibana)</span>
-                      <div class="progress" style="padding-top:5px;">
+                      <span class="progress-badge"
+                        >React JS (MERN Stack), React Native</span
+                      >
+                      <div class="progress" style="padding-top: 5px">
                         <div
                           class="progress-bar progress-bar-primary"
                           data-aos="progress-full"
@@ -1156,7 +1424,51 @@ $('#number4').jQuerySimpleCounter({end: 11,duration: 1500});
                           aria-valuenow="60"
                           aria-valuemin="0"
                           aria-valuemax="100"
-                          style="width: 50%"
+                          style="width: 75%"
+                        ></div>
+                        <span class="progress-value"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col-md-6">
+                    <div class="progress-container progress-primary">
+                      <span class="progress-badge"
+                        >Python, Pandas, TensorFlow, Scikit Learn, OpenCV, NLTK
+                      </span>
+                      <div class="progress" style="padding-top: 5px">
+                        <div
+                          class="progress-bar progress-bar-primary"
+                          data-aos="progress-full"
+                          data-aos-offset="10"
+                          data-aos-duration="2000"
+                          role="progressbar"
+                          aria-valuenow="60"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                          style="width: 75%"
+                        ></div>
+                        <span class="progress-value"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="progress-container progress-primary">
+                      <span class="progress-badge"
+                        >ELK Stack (ElasticSearch, Logstash, Kibana)</span
+                      >
+                      <div class="progress" style="padding-top: 5px">
+                        <div
+                          class="progress-bar progress-bar-primary"
+                          data-aos="progress-full"
+                          data-aos-offset="10"
+                          data-aos-duration="2000"
+                          role="progressbar"
+                          aria-valuenow="60"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                          style="width: 65%"
                         ></div>
                         <span class="progress-value"></span>
                       </div>
@@ -1185,7 +1497,12 @@ $('#number4').jQuerySimpleCounter({end: 11,duration: 1500});
                 <i class="fa fa-trophy fa-3x" style="color: #0674da"></i>
                 <h5 class="title">Microsoft Learn Student Ambassador</h5>
                 <p class="description">
-                  "Microsoft Learn Student Ambassadors" is a worldwide recognizable program to sponsor students majoring in disciplines related to technology. The MLSA program enhances students' employability by offering training in skills not usually taught in academia, including knowledge of Microsoft technologies.
+                  "Microsoft Learn Student Ambassadors" is a worldwide
+                  recognizable program to sponsor students majoring in
+                  disciplines related to technology. The MLSA program enhances
+                  students' employability by offering training in skills not
+                  usually taught in academia, including knowledge of Microsoft
+                  technologies.
                 </p>
                 <span class="date">July 2020</span>
               </div>
@@ -1200,7 +1517,7 @@ $('#number4').jQuerySimpleCounter({end: 11,duration: 1500});
                   pre-accelerator organized by IEEE Sri Lankan Chapter.
                 </p>
                 <br />
-                  <b>Product: smartCop </b>
+                <b>Product: smartCop </b>
                 <span class="date">December 2019</span>
               </div>
             </div>
@@ -1214,7 +1531,7 @@ $('#number4').jQuerySimpleCounter({end: 11,duration: 1500});
                   Lanka Institute of Information Technology(SLITT)
                 </p>
                 <br />
-                  <b>Product: smartCop </b>
+                <b>Product: smartCop </b>
                 <span class="date">December 2019</span>
               </div>
             </div>
@@ -1226,10 +1543,9 @@ $('#number4').jQuerySimpleCounter({end: 11,duration: 1500});
                   Invention Convention for Engineering Smart Systems(InCo V)
                 </h5>
                 <p class="description">
-                  Best Innovation award at "Invention Convention for
-                  Engineering Smart Systems for Industry" competition organized
-                  by Department of Industrial Management, University of
-                  Kelaniya.
+                  Best Innovation award at "Invention Convention for Engineering
+                  Smart Systems for Industry" competition organized by
+                  Department of Industrial Management, University of Kelaniya.
                   <br />
                   <b>Product: smartCop </b>
                 </p>
@@ -1246,7 +1562,7 @@ $('#number4').jQuerySimpleCounter({end: 11,duration: 1500});
                   by Sri Lanka Telecom Mobitel at Polonnaruwa Museum premises.
                 </p>
                 <br />
-                  <b>Product: Deco AR </b>
+                <b>Product: Deco AR </b>
                 <span class="date">July 2019</span>
               </div>
             </div>
@@ -1273,7 +1589,7 @@ $('#number4').jQuerySimpleCounter({end: 11,duration: 1500});
                   organized by Informatics Institute of Technology(IIT)
                 </p>
                 <br />
-                  <b>Product: TravoVoyage </b>
+                <b>Product: TravoVoyage </b>
                 <span class="date">January 2019</span>
               </div>
             </div>
@@ -1287,17 +1603,20 @@ $('#number4').jQuerySimpleCounter({end: 11,duration: 1500});
                   organized by University of Colombo School of Computing.
                 </p>
                 <br />
-                  <b>Product: Deco AR </b>
+                <b>Product: Deco AR </b>
                 <span class="date">October 2018</span>
               </div>
             </div>
             <div class="award">
               <div class="award-icon"></div>
               <div class="award-content">
-                <i class="fa fa-trophy fa-3x"  style="color:#da7e06"></i>
+                <i class="fa fa-trophy fa-3x" style="color: #da7e06"></i>
                 <h5 class="title">Selected to the Dean's List</h5>
                 <p class="description">
-                  Dean's List Awards are presented to the best-performing undergraduates of the Faculty of Science at the University of Kelaniya. I was honoured to get selected for the dean's award List for the academic year 2017/2018.
+                  Dean's List Awards are presented to the best-performing
+                  undergraduates of the Faculty of Science at the University of
+                  Kelaniya. I was honoured to get selected for the dean's award
+                  List for the academic year 2017/2018.
                 </p>
               </div>
             </div>
@@ -1330,9 +1649,12 @@ $('#number4').jQuerySimpleCounter({end: 11,duration: 1500});
                   </a>
                 </h5>
                 <p class="description">
-                  ScholarX is an exclusive industrial mentorship program driven by the Sustainable Education Foundation, offered to a selected pool of University undergraduates who have performed with the best potential.
-                  I was privileged to get selected to this Industrial Mentorship and Career Development
-                  program representing University of Kelaniya.
+                  ScholarX is an exclusive industrial mentorship program driven
+                  by the Sustainable Education Foundation, offered to a selected
+                  pool of University undergraduates who have performed with the
+                  best potential. I was privileged to get selected to this
+                  Industrial Mentorship and Career Development program
+                  representing University of Kelaniya.
                 </p>
               </div>
             </div>
@@ -1346,8 +1668,8 @@ $('#number4').jQuerySimpleCounter({end: 11,duration: 1500});
                   >
                 </h5>
                 <p class="description">
-                  Chief editor and the event coordinator at Microsoft Students' Club of
-                  University of Kelaniya.
+                  Chief editor and the event coordinator at Microsoft Students'
+                  Club of University of Kelaniya.
                 </p>
               </div>
             </div>
@@ -1594,11 +1916,13 @@ $('#number4').jQuerySimpleCounter({end: 11,duration: 1500});
         </div>
       </section>
 
-
       <!--====================================================
                           CONTACT
     ======================================================-->
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" style="padding-top:5px !important;">
+      <section
+        class="resume-section p-3 p-lg-5 d-flex flex-column"
+        style="padding-top: 5px !important"
+      >
         <div class="row my-auto" id="contact">
           <div class="col-md-8">
             <div class="contact-cont">
@@ -1750,21 +2074,36 @@ $('#number4').jQuerySimpleCounter({end: 11,duration: 1500});
                   </div>
                   <div class="col-md-5">
                     <p>
-                      "Evenza" Smart Event Management Platform is an online event management and resourcing platform that serves the functionality of an event manager as well as providing access to event-related resources by connecting relevant service providers to the customers.
-                        <br><br>
-                      The core uniqueness is that the proposed system provides a solution for planning and management of an event as well as finding necessary resources(services and products) within the same platform. The project also provides most of the basic functionality required for an event. It consists of the current background of the problems we face while planning for upcoming events and how planners can tackle these matters through this proposed system. It also entails building a fully functional system that
-                      would help achieve a well-organized, timely and within the budget event.
+                      "Evenza" Smart Event Management Platform is an online
+                      event management and resourcing platform that serves the
+                      functionality of an event manager as well as providing
+                      access to event-related resources by connecting relevant
+                      service providers to the customers.
+                      <br /><br />
+                      The core uniqueness is that the proposed system provides a
+                      solution for planning and management of an event as well
+                      as finding necessary resources(services and products)
+                      within the same platform. The project also provides most
+                      of the basic functionality required for an event. It
+                      consists of the current background of the problems we face
+                      while planning for upcoming events and how planners can
+                      tackle these matters through this proposed system. It also
+                      entails building a fully functional system that would help
+                      achieve a well-organized, timely and within the budget
+                      event.
                     </p>
                     <ul class="list-inline item-details">
                       <li>
                         Technology Stack:
                         <strong>
                           <a href="#">
-                            MongoDB, NodeJs, Express, Angular2, Swagger, Tensorflow JS, ChartJs, JWT Authentication, Socket.io, Google Cloud Platform</a
+                            MongoDB, NodeJs, Express, Angular2, Swagger,
+                            Tensorflow JS, ChartJs, JWT Authentication,
+                            Socket.io, Google Cloud Platform</a
                           >
                         </strong>
                       </li>
-                      <br>
+                      <br />
                       <li>
                         Timestamp:
                         <strong>
@@ -1824,18 +2163,28 @@ $('#number4').jQuerySimpleCounter({end: 11,duration: 1500});
                   </div>
                   <div class="col-md-5">
                     <p>
-                      BestDriver is an interactive web-based platform for instant and secure Tour and taxi booking mainly targeted at Foreigners traveling to Sri Lanka.
-                      <br><br>
-                      The platform is able to provide real-time taxi and tour bookings, airport pickups with a live payment calculator with the support of Google Maps, Geocoding, Matrix, and Places API. Project was developed for a client at AccSeed Ltd, where I was a co-founder since May 2019. The project was based on HTML, JS, and Bootstrap with a PHP backend.
+                      BestDriver is an interactive web-based platform for
+                      instant and secure Tour and taxi booking mainly targeted
+                      at Foreigners traveling to Sri Lanka.
+                      <br /><br />
+                      The platform is able to provide real-time taxi and tour
+                      bookings, airport pickups with a live payment calculator
+                      with the support of Google Maps, Geocoding, Matrix, and
+                      Places API. Project was developed for a client at AccSeed
+                      Ltd, where I was a co-founder since May 2019. The project
+                      was based on HTML, JS, and Bootstrap with a PHP backend.
                     </p>
                     <ul class="list-inline item-details">
                       <li>
                         Technology Stack:
                         <strong>
-                          <a href="#"> HTML, CSS, JS, Bootstrap, PHP | Google Maps, Geocoding, Places, and Matrix APIs</a>
+                          <a href="#">
+                            HTML, CSS, JS, Bootstrap, PHP | Google Maps,
+                            Geocoding, Places, and Matrix APIs</a
+                          >
                         </strong>
                       </li>
-                      <br>
+                      <br />
                       <li>
                         Timestamp:
                         <strong>
@@ -1902,7 +2251,7 @@ $('#number4').jQuerySimpleCounter({end: 11,duration: 1500});
                       pharamacies in Western Provience and provide an
                       outstanding service to help the community.
                       <br /><br />
-                      Our commitment has been recognized by a local News Paper, 
+                      Our commitment has been recognized by a local News Paper,
                       <b>CeylonToday</b>::
                       <a href="https://ceylontoday.lk/features-more/5185"
                         >Read the Article..</a
@@ -1915,7 +2264,7 @@ $('#number4').jQuerySimpleCounter({end: 11,duration: 1500});
                           <a href="#"> HTML, CSS, JS, Bootstrap, PHP</a>
                         </strong>
                       </li>
-                      <br>
+                      <br />
                       <li>
                         Timestamp:
                         <strong>
@@ -1973,12 +2322,24 @@ $('#number4').jQuerySimpleCounter({end: 11,duration: 1500});
                   </div>
                   <div class="col-md-5">
                     <p>
-                      LKMarts.com online retail web stores were developed in March 2020 where the whole country was locked-down due to the covid-19 pandemic. People were suffering from the situation as they were having difficulties reaching pharmacies, groceries to fulfill their day-to-day needs We at AccSeedd identified this requirement; for an online solution to easily reach groceries to order daily products, and developed these platforms to provide the required technical support during the pandemic.
-<br><br>
-The platform was capable of providing online products ordering, SMS alerts, and a lot more features. This service was delivered free of charge as a social service. We were able to partner with more than 11 groceries in the Western Province and support the community.
-<br><br>
-Our commitment has been recognized by a local News Paper, 
-                      <b>CeylonToday</b>:: 
+                      LKMarts.com online retail web stores were developed in
+                      March 2020 where the whole country was locked-down due to
+                      the covid-19 pandemic. People were suffering from the
+                      situation as they were having difficulties reaching
+                      pharmacies, groceries to fulfill their day-to-day needs We
+                      at AccSeedd identified this requirement; for an online
+                      solution to easily reach groceries to order daily
+                      products, and developed these platforms to provide the
+                      required technical support during the pandemic.
+                      <br /><br />
+                      The platform was capable of providing online products
+                      ordering, SMS alerts, and a lot more features. This
+                      service was delivered free of charge as a social service.
+                      We were able to partner with more than 11 groceries in the
+                      Western Province and support the community.
+                      <br /><br />
+                      Our commitment has been recognized by a local News Paper,
+                      <b>CeylonToday</b>::
                       <a href="https://ceylontoday.lk/features-more/5185"
                         >Read the Article..</a
                       >
@@ -1990,7 +2351,7 @@ Our commitment has been recognized by a local News Paper,
                           <a href="#"> HTML, CSS, JS, Bootstrap, PHP</a>
                         </strong>
                       </li>
-                      <br>
+                      <br />
                       <li>
                         Timestamp:
                         <strong>
@@ -2044,25 +2405,27 @@ Our commitment has been recognized by a local News Paper,
                       class="img-fluid img-centered"
                       src="img/portfolio/m1.png"
                       alt=""
-                      style = "max-height:70vh"
+                      style="max-height: 70vh"
                     />
                   </div>
                   <div class="col-md-5">
                     <p>
                       This project is the Progressive Web Application(PWA)
-                      developed for the Evenza - Smart Event
-                      Management and Resourcing Platform.
+                      developed for the Evenza - Smart Event Management and
+                      Resourcing Platform. Progressive Web Application generated
+                      with angular-PWA, It has the capability of managing a
+                      cache in local storage.
                     </p>
                     <ul class="list-inline item-details">
                       <li>
                         Technology Stack:
                         <strong>
                           <a href="#">
-                             Angular2, NodeJS, Express, MongoDB, Angular PWA</a
+                            Angular2, NodeJS, Express, MongoDB, Angular PWA</a
                           >
                         </strong>
                       </li>
-                      <br>
+                      <br />
                       <li>
                         Timestamp:
                         <strong>
@@ -2116,23 +2479,37 @@ Our commitment has been recognized by a local News Paper,
                       class="img-fluid img-centered"
                       src="img/portfolio/m2.jpg"
                       alt=""
-                      style = "max-height:70vh"
+                      style="max-height: 70vh"
                     />
                   </div>
                   <div class="col-md-5">
                     <p>
-                      DdecoAR is an Augmented Reality supported mobile application that provides an e-commerce platform for interior designs and bath ware products with a realistic experience. Customers can view products in the real-world environment before purchase, which enables more convenience and reduces product returns while increasing sales dramatically with the ace of a cutting-edge Augmented Reality based experience.
-                      <br><br>
-                      The Idea was first pitched at iHack 2018 organized by University of colombo School of Computing and became the Second Runners Up in October 2018. Development was carried out until January 2020, and Deco AR won many awards in hackathons and competition.
+                      DdecoAR is an Augmented Reality supported mobile
+                      application that provides an e-commerce platform for
+                      interior designs and bath ware products with a realistic
+                      experience. Customers can view products in the real-world
+                      environment before purchase, which enables more
+                      convenience and reduces product returns while increasing
+                      sales dramatically with the ace of a cutting-edge
+                      Augmented Reality based experience.
+                      <br /><br />
+                      The Idea was first pitched at iHack 2018 organized by
+                      University of colombo School of Computing and became the
+                      Second Runners Up in October 2018. Development was carried
+                      out until January 2020, and Deco AR won many awards in
+                      hackathons and competition.
                     </p>
                     <ul class="list-inline item-details">
                       <li>
                         Technology Stack:
                         <strong>
-                          <a href="#"> Unity 3D, Andriod SDK, Vuforia Augmented Reality SDK, C#</a>
+                          <a href="#">
+                            Unity 3D, Andriod SDK, Vuforia Augmented Reality
+                            SDK, C#</a
+                          >
                         </strong>
                       </li>
-                      <br>
+                      <br />
                       <li>
                         Timestamp:
                         <strong>
@@ -2188,25 +2565,37 @@ Our commitment has been recognized by a local News Paper,
                       class="img-fluid img-centered"
                       src="img/portfolio/ml1.png"
                       alt=""
-                      style = "max-height:70vh"
+                      style="max-height: 70vh"
                     />
                   </div>
                   <div class="col-md-5">
                     <p>
-                      smartCop is a smart solution based on deep learning, to manage road traffic and prevent road-accidents in an innovative; automated way. The project was developed using python, with a pre-trained Convolutional Neural Network (CNN) on Tensorflow, Keras with image-processing techniques using OpenCV.
-<br><br>
-smartCop won the Best Innovation Category Award at the Invention Convention for Engineering Smart Systems for Industry 2019 (InCo V) competition, organized by the University of Kelaniya in 2019. It also became Finalists at Codefest AI Innovator 2019 organized by the Sri Lankan Institute of Information Technology and IEEE Innovation Nation Sri Lanka Startup Pre-Accelerator in 2019.
+                      smartCop is a smart solution based on deep learning, to
+                      manage road traffic and prevent road-accidents in an
+                      innovative; automated way. The project was developed using
+                      python, with a pre-trained Convolutional Neural Network
+                      (CNN) on Tensorflow, Keras with image-processing
+                      techniques using OpenCV.
+                      <br /><br />
+                      smartCop won the Best Innovation Category Award at the
+                      Invention Convention for Engineering Smart Systems for
+                      Industry 2019 (InCo V) competition, organized by the
+                      University of Kelaniya in 2019. It also became Finalists
+                      at Codefest AI Innovator 2019 organized by the Sri Lankan
+                      Institute of Information Technology and IEEE Innovation
+                      Nation Sri Lanka Startup Pre-Accelerator in 2019.
                     </p>
                     <ul class="list-inline item-details">
                       <li>
                         Technology Stack:
                         <strong>
                           <a href="#">
-                             Python, OpenCV, Google MobileNet, CNN with TensorFlow and Keras, Arduino</a
+                            Python, OpenCV, Google MobileNet, CNN with
+                            TensorFlow and Keras, Arduino</a
                           >
                         </strong>
                       </li>
-                      <br>
+                      <br />
                       <li>
                         Timestamp:
                         <strong>
@@ -2260,23 +2649,38 @@ smartCop won the Best Innovation Category Award at the Invention Convention for 
                       class="img-fluid img-centered"
                       src="img/portfolio/ml3.jpg"
                       alt=""
-                      style = "max-height:70vh"
+                      style="max-height: 70vh"
                     />
                   </div>
                   <div class="col-md-5">
                     <p>
-                      Accurate face landmarking and facial feature detection are important operations that have an impact on subsequent tasks focused on the face, such as coding, face recognition, expression and/or gesture understanding, gaze detection, animation, face tracking, etc. We define a face landmark as a prominent feature that can play a discriminative role or can serve as anchor points on a face graph
-<br><br>
-Face Recognition was based on two approaches using face landmarks techniques; where a Machine Learning approach with K-Means clustering to classify faces considering the Euclidean distance; and a Deep Learning approach based on a Convolutional Neural Network on TensorFlow with Keras to achieve best performance and accuracy.
+                      Accurate face landmarking and facial feature detection are
+                      important operations that have an impact on subsequent
+                      tasks focused on the face, such as coding, face
+                      recognition, expression and/or gesture understanding, gaze
+                      detection, animation, face tracking, etc. We define a face
+                      landmark as a prominent feature that can play a
+                      discriminative role or can serve as anchor points on a
+                      face graph
+                      <br /><br />
+                      Face Recognition was based on two approaches using face
+                      landmarks techniques; where a Machine Learning approach
+                      with K-Means clustering to classify faces considering the
+                      Euclidean distance; and a Deep Learning approach based on
+                      a Convolutional Neural Network on TensorFlow with Keras to
+                      achieve best performance and accuracy.
                     </p>
                     <ul class="list-inline item-details">
                       <li>
                         Technology Stack:
                         <strong>
-                          <a href="#"> Python, PyQt5, OpenCV, TensorFlow, Keras, Firebase</a>
+                          <a href="#">
+                            Python, PyQt5, OpenCV, TensorFlow, Keras,
+                            Firebase</a
+                          >
                         </strong>
                       </li>
-                      <br>
+                      <br />
                       <li>
                         Timestamp:
                         <strong>
@@ -2287,6 +2691,83 @@ Face Recognition was based on two approaches using face landmarks techniques; wh
                         Category:
                         <strong>
                           <a href="#"> AI & Machine Learning</a>
+                        </strong>
+                      </li>
+                    </ul>
+                    <button
+                      class="btn btn-general btn-white"
+                      type="button"
+                      data-dismiss="modal"
+                    >
+                      <i class="fa fa-times"></i> Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="portfolio-modal modal fade"
+      id="portfolioModalml3"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="container">
+            <div class="row">
+              <div class="modal-body">
+                <div class="title-bar">
+                  <div class="col-md-12">
+                    <h2 class="text-center">Movie Recommendation System</h2>
+                    <div class="heading-border"></div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-7">
+                    <img
+                      class="img-fluid img-centered"
+                      src="img/portfolio/ml3.png"
+                      alt=""
+                      style="max-height: 70vh"
+                    />
+                  </div>
+                  <div class="col-md-5">
+                    <p>
+                      Recommendation systems can be defined as software
+                      applications that draw out and learn from data such as
+                      preferences, their actions (clicks, for example), browsing
+                      history, and generated recommendations, which are products
+                      that the system determines are appealing to the user in
+                      the immediate future.
+                      <br /><br />
+                      This project contains a movie recommendation system that
+                      provides recommendations using the ALS algorithm from
+                      Spark MLLib by training a MatrixFactorizationModel.
+                    </p>
+                    <ul class="list-inline item-details">
+                      <li>
+                        Technology Stack:
+                        <strong>
+                          <a href="#"> Scala, Apache Spark, Spark MLLib</a>
+                        </strong>
+                      </li>
+                      <br />
+                      <li>
+                        Timestamp:
+                        <strong>
+                          <a href="#"> October 2020</a>
+                        </strong>
+                      </li>
+                      <li>
+                        Category:
+                        <strong>
+                          <a href="#"> Data Science</a>
                         </strong>
                       </li>
                     </ul>
