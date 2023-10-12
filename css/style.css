@@ -215,14 +215,14 @@ section.resume-section .resume-item .resume-date {
 }
 
 .text-primary {
-  color: #006aab !important;
+  color: #0d74b3 !important;
 }
 
 /*==================================================
                       ABOUT
 ====================================================*/
 #about {
-  background-image: url(../img/profile-banner.jpg);
+  background-image: url(../img/profile-banner.png);
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
